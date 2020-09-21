@@ -1,16 +1,13 @@
 <?php
 class modulo{
-	function getMod11Dv( $num ){
-	
+	function getMod11Dv( $num ){	
 	  $digits = str_replace( array( '.', ',' ), array( ''.'' ), strrev($num ) );
 	  if ( ! ctype_digit( $digits ) )
 	  {
 	    return false;
 	  }
-
 	  $sum = 0;
 	  $factor = 2;
-	 
 	  for( $i=0;$i<strlen( $digits ); $i++ )
 	  {
 	    $sum += substr( $digits,$i,1 ) * $factor;
@@ -20,8 +17,7 @@ class modulo{
 	    }else{
 	     $factor++;
 	   }
-	  }
-	 
+	  }	 
 	  $dv = 11 - ($sum % 11);
 	  if ( $dv == 10 )
 	  {
